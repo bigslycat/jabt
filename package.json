@@ -1,7 +1,7 @@
 {
   "name": "jabt",
   "version": "0.0.1",
-  "description": "jabt",
+  "description": "Just another build tool. React build and dev HMR server scripts",
   "os": [
     "linux"
   ],
