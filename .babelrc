@@ -1,0 +1,16 @@
+{
+  "plugins": [
+    "syntax-flow",
+    "syntax-trailing-function-commas",
+    "transform-class-properties",
+    "transform-do-expressions",
+    "transform-es2015-destructuring",
+    "transform-es2015-modules-commonjs",
+    "transform-es2015-parameters",
+    "transform-exponentiation-operator",
+    "transform-export-extensions",
+    "transform-flow-strip-types",
+    "transform-function-bind",
+    "transform-object-rest-spread"
+  ]
+}

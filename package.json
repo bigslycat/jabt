@@ -1,0 +1,84 @@
+{
+  "name": "jabt",
+  "version": "0.0.1",
+  "description": "jabt",
+  "os": [
+    "linux"
+  ],
+  "engines": {
+    "node": ">=7.3.0",
+    "npm": ">=4.0.5"
+  },
+  "main": "lib/createMiddleware.js",
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "precommit": "npm run check && npm run build",
+    "postinstall": "npm run build",
+    "check": "npm run lint && npm run types && npm run test",
+    "lint": "eslint '@(src|__tests__)/**/*.js'",
+    "types": "flow",
+    "test": "jest --config jest.json",
+    "flow-coverage": "flow-coverage-report"
+  },
+  "files": [
+    "src",
+    "lib"
+  ],
+  "dependencies": {
+    "autoprefixer": "^6.6.1",
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-syntax-flow": "^6.18.0",
+    "babel-plugin-syntax-trailing-function-commas": "^6.20.0",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-do-expressions": "^6.8.0",
+    "babel-plugin-transform-es2015-destructuring": "^6.19.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-plugin-transform-es2015-parameters": "^6.21.0",
+    "babel-plugin-transform-exponentiation-operator": "^6.8.0",
+    "babel-plugin-transform-export-extensions": "^6.8.0",
+    "babel-plugin-transform-flow-strip-types": "^6.21.0",
+    "babel-plugin-transform-function-bind": "^6.8.0",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-flowtype": "^2.30.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "eslint": "^3.12.2",
+    "extract-text-webpack-plugin": "^2.0.0-beta.5",
+    "flow-bin": "^0.37.4",
+    "html-webpack-plugin": "^2.26.0",
+    "jest": "^18.1.0",
+    "pug": "^2.0.0-beta6",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-hot-middleware": "2.14.0",
+    "webpack": "2.2.0-rc.3"
+  },
+  "devDependencies": {
+    "flow-coverage-report": "^0.2.0",
+    "flow-typed": "^2.0.0",
+    "husky": "^0.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigslycat/jabt.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": {
+    "name": "Pavel Tereschenko",
+    "email": "me@pavlik.pro",
+    "url": "https://github.com/bigslycat"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bigslycat/jabt/issues"
+  },
+  "homepage": "https://github.com/bigslycat/jabt#readme"
+}
