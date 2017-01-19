@@ -15,6 +15,9 @@ export const {
   FILENAME = rc.filename || 'bundle.js',
   NODE_ENV = 'development',
 
-  TPL_PATH = rc.tplPath || path.resolve(__dirname, '..', 'src', 'template.pug'),
+  TPL_PATH = rc.tplPath ?
+    resolve(...(Array.isArray(rc.tplPath) ? rc.tplPath : [rc.tplPath])) :
+    path.resolve(__dirname, '..', 'src', 'template.pug'),
+
   TPL_LOCALS = rc.locals || {},
 } = process.env;
