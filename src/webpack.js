@@ -82,6 +82,10 @@ export default {
             'stage-0',
             'react',
           ],
+
+          ...(IS_DEV ? {
+            plugins: ['react-hot-loader/babel'],
+          } : {}),
         },
       },
       {
