@@ -13,6 +13,7 @@ import {
   NODE_ENV,
 
   IS_DEV,
+  IS_PROD,
 
   /* eslint-enable import/named */
 
@@ -49,6 +50,8 @@ export default {
 
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
+      IS_DEV: JSON.stringify(IS_DEV),
+      IS_PROD: JSON.stringify(IS_PROD),
     }),
 
     // new HtmlWebpackPlugin(),
