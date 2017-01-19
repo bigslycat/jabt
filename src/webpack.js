@@ -12,6 +12,8 @@ import {
   FILENAME,
   NODE_ENV,
 
+  IS_DEV,
+
   /* eslint-enable import/named */
 
 } from './env';
@@ -21,9 +23,11 @@ export default {
   devtool: '#source-map',
 
   entry: [
-    'webpack-hot-middleware/client',
-
     ...ENTRY.split(/, ?/),
+
+    ...(IS_DEV ? [
+      'webpack-hot-middleware/client',
+    ] : []),
   ],
 
   output: {
@@ -33,11 +37,11 @@ export default {
   },
 
   plugins: [
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin({
-      multiStep: false,
-    }),
-    new webpack.NoErrorsPlugin(),
+    ...(IS_DEV ? [
+      new webpack.optimize.OccurrenceOrderPlugin(),
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NoErrorsPlugin(),
+    ] : []),
 
     // new ExtractTextPlugin('components.css'),
 
