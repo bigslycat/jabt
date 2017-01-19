@@ -20,6 +20,7 @@
     "flow-coverage": "flow-coverage-report"
   },
   "files": [
+    "src/template.pug",
     "lib"
   ],
   "dependencies": {
