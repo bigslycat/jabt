@@ -11,9 +11,9 @@
   },
   "main": "lib/createMiddleware.js",
   "scripts": {
-    "build": "babel src --out-dir lib",
-    "precommit": "npm run check && npm run build",
-    "postinstall": "npm run build",
+    "build": "npm run check && babel src --out-dir lib",
+    "precommit": "npm run build",
+    "prepublish": "npm run build",
     "check": "npm run lint && npm run types && npm run test",
     "lint": "eslint '@(src|__tests__)/**/*.js'",
     "types": "flow",
@@ -21,7 +21,6 @@
     "flow-coverage": "flow-coverage-report"
   },
   "files": [
-    "src",
     "lib"
   ],
   "dependencies": {
