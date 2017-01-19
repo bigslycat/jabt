@@ -112,5 +112,12 @@ export default {
     ],
   },
 
+  ...(IS_DEV ? {
+    devServer: {
+      hot: true,
+      publicPath: '/',
+    },
+  } : {}),
+
   target: 'web',
 };
