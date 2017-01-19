@@ -45,7 +45,7 @@ export default {
       new webpack.NoErrorsPlugin(),
     ] : []),
 
-    // new ExtractTextPlugin('components.css'),
+    new ExtractTextPlugin('components.css'),
 
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
