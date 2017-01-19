@@ -30,6 +30,8 @@ export default {
     ] : []),
   ],
 
+  resolve: { extensions: ['.js', '.jsx'] },
+
   output: {
     path: PATH,
     publicPath: PUBLIC,
