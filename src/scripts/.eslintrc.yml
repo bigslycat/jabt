@@ -1,0 +1,4 @@
+extends: ../../.eslintrc.yml
+rules:
+  no-console: off
+  import/no-dynamic-require: off
