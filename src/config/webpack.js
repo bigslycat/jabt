@@ -2,6 +2,8 @@ import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 
+import resolve from '../helpers/resolve';
+
 import {
 
   /* eslint-disable import/named */
@@ -24,7 +26,7 @@ export default {
   devtool: '#source-map',
 
   entry: [
-    ...ENTRY.split(/, ?/),
+    ...ENTRY.split(/, ?/).map(relative => resolve(relative)),
 
     ...(IS_DEV ? [
       'webpack-hot-middleware/client',
