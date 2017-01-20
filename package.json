@@ -10,6 +10,10 @@
     "npm": ">=4.1.1"
   },
   "main": "lib/middleware/createMiddleware.js",
+  "bin": {
+    "jabt": "lib/scripts/build.js",
+    "jabt-backend": "lib/scripts/build-backend.js"
+  },
   "scripts": {
     "build": "npm run check && babel src --out-dir lib",
     "precommit": "npm run build",
