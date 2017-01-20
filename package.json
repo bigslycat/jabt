@@ -15,8 +15,9 @@
     "jabt-backend": "lib/scripts/build-backend.js"
   },
   "scripts": {
-    "build": "npm run check && babel src --out-dir lib",
-    "precommit": "npm run build",
+    "safe-build": "npm run check && npm run build",
+    "build": "babel src --out-dir lib",
+    "precommit": "npm run safe-build",
     "check": "npm run lint && npm run types && npm run test",
     "lint": "eslint '@(src|__tests__)/**/*.js'",
     "types": "flow",
