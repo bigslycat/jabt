@@ -46,6 +46,10 @@ const config = {
       new webpack.NoEmitOnErrorsPlugin(),
     ] : []),
 
+    ...(IS_PROD ? [
+      new webpack.optimize.UglifyJsPlugin(),
+    ] : []),
+
     new ExtractTextPlugin('components.css'),
 
     new webpack.DefinePlugin({
@@ -113,6 +117,8 @@ const config = {
   },
 
   ...(IS_DEV ? {
+    devtool: '#source-map',
+
     devServer: {
       hot: true,
       publicPath: '/',
