@@ -13,6 +13,8 @@ type RcType = {
   filename?: string,
   tplPath?: string,
   locals?: PlainType,
+  src?: string,
+  build?: string,
 };
 
 type GetRcType = (params?: {
