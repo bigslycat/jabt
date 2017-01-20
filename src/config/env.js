@@ -13,7 +13,7 @@ export const PROD = 'production';
 export const {
   ENTRY = rc.entry || './index.js',
 
-  PATH = rc.path || resolve('dist'),
+  OUTPUT_PATH = rc.path ? resolve(rc.path) : resolve('dist'),
   PUBLIC = rc.publicPath || '/',
   FILENAME = rc.filename || 'bundle.js',
   NODE_ENV = DEV,

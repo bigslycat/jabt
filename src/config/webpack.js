@@ -7,7 +7,7 @@ import {
   /* eslint-disable import/named */
 
   ENTRY,
-  PATH,
+  OUTPUT_PATH,
   PUBLIC,
   FILENAME,
   NODE_ENV,
@@ -34,7 +34,7 @@ export default {
   resolve: { extensions: ['.js', '.jsx'] },
 
   output: {
-    path: PATH,
+    path: OUTPUT_PATH,
     publicPath: PUBLIC,
     filename: FILENAME,
   },
