@@ -2,12 +2,8 @@
 
 import path from 'path';
 
-type ResolveType = (...Array<string>) => string;
+import createPathResolver from './createPathResolver';
 
-const resolve: ResolveType = (...pathArgs) =>
-  path.resolve(
-    process.cwd(),
-    ...pathArgs,
-  );
+const resolve = createPathResolver(path.resolve)(process.cwd());
 
 export default resolve;
