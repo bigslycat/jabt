@@ -22,9 +22,7 @@ import {
 } from './env';
 
 
-export default {
-  devtool: '#source-map',
-
+const config = {
   entry: [
     ...ENTRY.split(/, ?/).map(relative => resolve(relative)),
 
@@ -123,3 +121,7 @@ export default {
 
   target: 'web',
 };
+
+export const compiler = webpack(config);
+
+export default config;
