@@ -43,7 +43,7 @@ export default {
     ...(IS_DEV ? [
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoErrorsPlugin(),
+      new webpack.NoEmitOnErrorsPlugin(),
     ] : []),
 
     new ExtractTextPlugin('components.css'),
