@@ -25,6 +25,7 @@
     "flow-coverage": "flow-coverage-report"
   },
   "files": [
+    ".babelrc",
     "src/template.pug",
     "lib"
   ],
