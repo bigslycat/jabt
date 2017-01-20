@@ -1,6 +1,6 @@
 import { resolve as pathResolve } from 'path';
 
-import resolve from '../src/resolve';
+import resolve from '../../src/helpers/resolve';
 
 jest.mock('path');
 process.cwd = jest.fn();

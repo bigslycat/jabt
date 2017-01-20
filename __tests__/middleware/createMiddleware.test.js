@@ -1,18 +1,18 @@
 jest.mock('pug', () => ({ compileFile: () => 'COMPILED' }));
 
-import createMiddleware from '../src/createMiddleware';
-import createTemplateMiddleware from '../src/createTemplateMiddleware';
-import decorateHotMiddleware from '../src/decorateHotMiddleware';
-import { devMiddleware, hotMiddleware } from '../src/middlewares';
+import createMiddleware from '../../src/middleware/createMiddleware';
+import createTemplateMiddleware from '../../src/middleware/createTemplateMiddleware';
+import decorateHotMiddleware from '../../src/middleware/decorateHotMiddleware';
+import { devMiddleware, hotMiddleware } from '../../src/middleware/middlewares';
 
-jest.mock('../src/middlewares', () => ({
+jest.mock('../../src/middleware/middlewares', () => ({
   devMiddleware: jest.fn(),
   hotMiddleware: 'HOT_MIDDLEWARE',
 }));
 
-jest.mock('../src/createTemplateMiddleware');
-jest.mock('../src/decorateHotMiddleware');
-jest.mock('../src/env', () => ({
+jest.mock('../../src/middleware/createTemplateMiddleware');
+jest.mock('../../src/middleware/decorateHotMiddleware');
+jest.mock('../../src/config/env', () => ({
   TPL_PATH: 'TPL_PATH',
   TPL_LOCALS: 'TPL_LOCALS',
   ENTRY: 'ENTRY',

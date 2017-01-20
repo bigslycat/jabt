@@ -4,7 +4,7 @@ import { readFileSync } from 'fs';
 
 import resolve from './resolve';
 
-import type { PlainType } from './types';
+import type { PlainType } from '../types';
 
 type RcType = {
   entry?: string,

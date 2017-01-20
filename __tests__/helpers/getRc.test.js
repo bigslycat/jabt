@@ -1,10 +1,10 @@
 import { readFileSync } from 'fs';
 
-import resolve from '../src/resolve';
-import getRc from '../src/getRc';
+import resolve from '../../src/helpers/resolve';
+import getRc from '../../src/helpers/getRc';
 
 jest.mock('fs');
-jest.mock('../src/resolve');
+jest.mock('../../src/helpers/resolve');
 
 const FILENAME_DEFAULT = '.jabtrc';
 const DEFAULTS_DEFAULT = {

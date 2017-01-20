@@ -2,8 +2,8 @@
 
 import path from 'path';
 
-import resolve from './resolve';
-import getRc from './getRc';
+import resolve from '../helpers/resolve';
+import getRc from '../helpers/getRc';
 
 const rc = getRc();
 

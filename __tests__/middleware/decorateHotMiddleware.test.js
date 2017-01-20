@@ -1,4 +1,4 @@
-import decorateHotMiddleware from '../src/decorateHotMiddleware';
+import decorateHotMiddleware from '../../src/middleware/decorateHotMiddleware';
 
 describe('decorateHotMiddleware()', () => {
   it('Binds arguments to hotMiddleware', () => {

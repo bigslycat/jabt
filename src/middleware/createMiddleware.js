@@ -12,7 +12,7 @@ import {
 
   /* eslint-enable import/named */
 
-} from './env';
+} from '../config/env';
 
 const render = compileFile(TPL_PATH);
 

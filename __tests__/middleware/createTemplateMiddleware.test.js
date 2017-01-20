@@ -1,4 +1,4 @@
-import createTemplateMiddleware from '../src/createTemplateMiddleware';
+import createTemplateMiddleware from '../../src/middleware/createTemplateMiddleware';
 
 const PATH = 'PATH';
 const LOCALS = 'LOCALS';
