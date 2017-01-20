@@ -23,6 +23,9 @@ export const {
     path.resolve(__dirname, '..', '..', 'src', 'template.pug'),
 
   TPL_LOCALS = rc.locals || {},
+
+  SRC = resolve(rc.src || 'src'),
+  BUILD = resolve(rc.build || 'build'),
 } = process.env;
 
 export const IS_DEV = NODE_ENV === DEV;
