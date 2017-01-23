@@ -24,11 +24,11 @@ import {
 
 const config = {
   entry: [
-    ...ENTRY.split(/, ?/).map(relative => resolve(relative)),
-
     ...(IS_DEV ? [
       'webpack-hot-middleware/client',
     ] : []),
+
+    ...ENTRY.split(/, ?/).map(relative => resolve(relative)),
   ],
 
   resolve: { extensions: ['.js', '.jsx'] },
