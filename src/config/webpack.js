@@ -96,14 +96,14 @@ const config = {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
-          loader: 'css-loader?importLoaders=1!postcss-loader',
+          loader: 'css-loader?modules?importLoaders=1!postcss-loader',
         }),
       },
       {
         test: /\.less$/,
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
-          loader: 'css-loader!postcss-loader!less-loader',
+          loader: 'css-loader?modules!postcss-loader!less-loader',
         }),
       },
       {
