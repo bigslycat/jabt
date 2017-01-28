@@ -2,12 +2,11 @@ import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 
-import resolve from '../helpers/resolve';
-
 import {
 
   /* eslint-disable import/named */
 
+  CONTEXT,
   ENTRY,
   OUTPUT_PATH,
   PUBLIC,
@@ -21,14 +20,25 @@ import {
 
 } from './env';
 
+const cssLoader = [
+  'css-loader?modules&importLoaders=1&localIdentName=[hash:base64:5]',
+  'postcss-loader',
+];
+
+const lessLoader = [
+  ...cssLoader,
+  'less-loader',
+];
 
 const config = {
+  context: CONTEXT,
+
   entry: [
     ...(IS_DEV ? [
       'webpack-hot-middleware/client',
     ] : []),
 
-    ...ENTRY.split(/, ?/).map(relative => resolve(relative)),
+    ...ENTRY.split(/, ?/),
   ],
 
   resolve: { extensions: ['.js', '.jsx'] },
@@ -62,6 +72,7 @@ const config = {
 
     new webpack.LoaderOptionsPlugin({
       options: {
+        context: CONTEXT,
         postcss: [
           autoprefixer({
             browsers: [
@@ -96,14 +107,14 @@ const config = {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
-          loader: 'css-loader?modules?importLoaders=1!postcss-loader',
+          loader: cssLoader.join('!'),
         }),
       },
       {
         test: /\.less$/,
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
-          loader: 'css-loader?modules!postcss-loader!less-loader',
+          loader: lessLoader.join('!'),
         }),
       },
       {

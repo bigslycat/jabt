@@ -7,6 +7,7 @@ import resolve from './resolve';
 import type { PlainType } from '../types';
 
 type RcType = {
+  context?: string,
   entry?: string,
   path?: string,
   publicPath?: string,

@@ -11,6 +11,10 @@ export const DEV = 'development';
 export const PROD = 'production';
 
 export const {
+  SRC = resolve(rc.src || 'src'),
+  BUILD = resolve(rc.build || 'build'),
+
+  CONTEXT = rc.context ? resolve(rc.context) : SRC,
   ENTRY = rc.entry || './index.js',
 
   OUTPUT_PATH = rc.path ? resolve(rc.path) : resolve('dist'),
@@ -23,9 +27,6 @@ export const {
     path.resolve(__dirname, '..', '..', 'src', 'template.pug'),
 
   TPL_LOCALS = rc.locals || {},
-
-  SRC = resolve(rc.src || 'src'),
-  BUILD = resolve(rc.build || 'build'),
 } = process.env;
 
 export const IS_DEV = NODE_ENV === DEV;
