@@ -41,7 +41,12 @@ const config = {
     ...ENTRY.split(/, ?/),
   ],
 
-  resolve: { extensions: ['.js', '.jsx'] },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    alias: {
+      'react-native': 'react-native-web',
+    },
+  },
 
   output: {
     path: OUTPUT_PATH,
