@@ -25,8 +25,9 @@
     "flow-coverage": "flow-coverage-report"
   },
   "files": [
+    "LICENSE.md",
     ".babelrc",
-    "src/template.pug",
+    "src",
     "lib"
   ],
   "dependencies": {
