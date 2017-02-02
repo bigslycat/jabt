@@ -1,6 +1,6 @@
 node_modules
-lib/*
-!lib/createMiddleware.js.flow
+lib/**/*
+!lib/middleware/createMiddleware.js.flow
 coverage
 jest
 *.log

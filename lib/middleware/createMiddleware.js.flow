@@ -1,0 +1,3 @@
+import createMiddleware from '../../src/middleware/createMiddleware';
+
+export default createMiddleware;
