@@ -117,14 +117,14 @@ const config = {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
+          fallback: 'style-loader',
           loader: cssLoader.join('!'),
         }),
       },
       {
         test: /\.less$/,
         loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
+          fallback: 'style-loader',
           loader: lessLoader.join('!'),
         }),
       },
