@@ -16,6 +16,8 @@ import {
   IS_DEV,
   IS_PROD,
 
+  IMPORT_ENV,
+
   /* eslint-enable import/named */
 
 } from './env';
@@ -68,9 +70,13 @@ const config = {
     new ExtractTextPlugin('components.css'),
 
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
-      IS_DEV: JSON.stringify(IS_DEV),
-      IS_PROD: JSON.stringify(IS_PROD),
+      'process.env': {
+        ...IMPORT_ENV.reduce((scope, varName) => ({
+          ...scope, [varName]: JSON.stringify(process.env[varName]),
+        }), {}),
+
+        NODE_ENV: JSON.stringify(NODE_ENV),
+      },
     }),
 
     // new HtmlWebpackPlugin(),

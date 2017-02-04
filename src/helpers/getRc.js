@@ -16,6 +16,7 @@ type RcType = {
   locals?: PlainType,
   src?: string,
   build?: string,
+  importEnv?: Array<string>,
 };
 
 type GetRcType = (params?: {
