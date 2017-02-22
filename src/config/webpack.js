@@ -147,6 +147,10 @@ const config = {
     },
   } : {}),
 
+  node: {
+    fs: 'empty',
+  },
+
   target: 'web',
 };
 
